@@ -59,15 +59,110 @@ class Block {
 
 // define blocks (T_SHAPE, LINE_THREE, LINE_TWO, SINGLE_CELL, SMALL_CORNER, LARGE_CORNER,
 // SQUARE2x2, DOLLAR_RIGHT, DOLLAR_LEFT).
-const T_SHAPE = [0, 0, 0, 1, 1, 1, 0, 1, 0]
-const LINE_THREE = [0, 0, 0, 1, 1, 1, 0, 0, 0]
-const LINE_TWO = [1, 1, 0, 0]
-const SINGLE_CELL = [1]
-const SMALL_CORNER = [1, 1, 0, 1]
-const LARGE_CORNER = [1, 1, 1, 1, 0, 0, 1, 0, 0]
-const SQUARE2x2 = [1, 1, 1, 1]
-const DOLLAR_RIGHT = [0, 0, 0, 0, 1, 1, 1, 1, 0]
-const DOLLAR_LEFT = [0, 0, 0, 1, 1, 0, 0, 1, 1]
+const POSITION = ['normal', 'turned-right', 'upside-down', 'turned-left']
+
+const T_SHAPE = {
+  currentPosition: 'normal',
+  positionsSet: {
+    normal: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-right': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'upside-down': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-left': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  },
+}
+const LINE_THREE = {
+  currentPosition: 'normal',
+  positionsSet: {
+    normal: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-right': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'upside-down': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-left': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  },
+}
+
+const LINE_TWO = {
+  currentPosition: 'normal',
+  positionsSet: {
+    normal: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-right': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'upside-down': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-left': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  },
+}
+
+const SINGLE_CELL = {
+  currentPosition: 'normal',
+  positionsSet: {
+    normal: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-right': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'upside-down': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-left': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  },
+}
+
+const SMALL_CORNER = {
+  currentPosition: 'normal',
+  positionsSet: {
+    normal: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-right': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'upside-down': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-left': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  },
+}
+
+const LARGE_CORNER = {
+  currentPosition: 'normal',
+  positionsSet: {
+    normal: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-right': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'upside-down': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-left': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  },
+}
+
+const SQUARE2x2 = {
+  currentPosition: 'normal',
+  positionsSet: {
+    normal: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-right': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'upside-down': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-left': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  },
+}
+
+const DOLLAR_RIGHT = {
+  currentPosition: 'normal',
+  positionsSet: {
+    normal: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-right': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'upside-down': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-left': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  },
+}
+
+const DOLLAR_LEFT = {
+  currentPosition: 'normal',
+  positionsSet: {
+    normal: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-right': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'upside-down': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'turned-left': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  },
+}
+
+
+
+
+
+// const T_SHAPE = [0, 0, 0, 1, 1, 1, 0, 1, 0]
+// const LINE_THREE = [0, 0, 0, 1, 1, 1, 0, 0, 0]
+// const LINE_TWO = [1, 1, 0, 0]
+// const SINGLE_CELL = [1]
+// const SMALL_CORNER = [1, 1, 0, 1]
+// const LARGE_CORNER = [1, 1, 1, 1, 0, 0, 1, 0, 0]
+// const SQUARE2x2 = [1, 1, 1, 1]
+// const DOLLAR_RIGHT = [0, 0, 0, 0, 1, 1, 1, 1, 0]
+// const DOLLAR_LEFT = [0, 0, 0, 1, 1, 0, 0, 1, 1]
 
 // create Array that indicates if a cell is already occupied.
 // Value 0 will mean 'free', 1 - 'occupied by moving block', 2 - 'occupied by previous block(s)'.
