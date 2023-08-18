@@ -1,41 +1,40 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* outline: 1px solid red; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
 }
 
 :root {
-    scroll-behavior: smooth;
-    background-color: grey;
-    --cell-size: 30px;
-    --cell-color: blue;
-    --block-color: green;
+  scroll-behavior: smooth;
+  background-color: grey;
+  --cell-size: 30px;
+  --cell-color: blue;
+  --block-color: green;
 }
 
 .tetris-body {
-    margin: 0 10%;
+  margin: 0 10%;
 }
 
 .gamearea {
-    margin: 2% 5%;
-    display: flex;
-    
+  margin: 2% 5%;
+  display: flex;
 }
 
-.line {
-    display: flex;
+.row {
+  display: flex;
 }
 
 .cell {
-    width: var(--cell-size);
-    height: var(--cell-size);
-    margin: 1px;
-    padding: 4px;
-    border: 2px solid white;
-    background-color: var(--cell-color);
+  width: var(--cell-size);
+  height: var(--cell-size);
+  margin: 1px;
+  padding: 4px;
+  border: 2px solid white;
+  background-color: var(--cell-color);
 }
 
 .testbtn {
-    cursor: pointer;
+  cursor: pointer;
 }
