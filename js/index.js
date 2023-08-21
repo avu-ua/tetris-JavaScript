@@ -439,11 +439,11 @@ function checkIfCanRender(plannedBlock, rotation) {
       plannedBlock['center'][1] + placementArea[i][1],
     ]
     if (
-      occupiedArray[brickPlace[0]][brickPlace[1]] === 2 ||
       brickPlace[0] < 0 ||
       brickPlace[0] > 24 ||
       brickPlace[1] < 0 ||
-      brickPlace[1] > 9
+      brickPlace[1] > 9 ||
+      occupiedArray[brickPlace[0]][brickPlace[1]] === 2
     )
       return false
   }
@@ -550,43 +550,44 @@ function rotate(rotation) {
 }
 
 function moveDown(currentBlock) {
-  if (userInitiatedDrop) {
-    speedDown = 100
-    userInitiatedDrop = false
-    moveDown(currentBlock)
-  }
+  let refreshIterationCount = 0
   const rotation = 0
   let futureBlock
   const intervalId = setInterval(() => {
     futureBlock = deepCopy(currentBlock)
-    futureBlock['center'][0]++
-    if (!currentBlock['newborn']) {
-      if (checkIfCanRender(futureBlock, rotation)) {
+    if (!currentBlock['newborn']) futureBlock['center'][0]++
+    if (checkIfCanRender(futureBlock, rotation)) {
+      currentBlock['newborn'] = false
+      if (userInitiatedDrop || refreshIterationCount === 10) {
         render('clear', currentBlock)
         currentBlock = deepCopy(futureBlock)
         render('paint', currentBlock)
-      } else {
-        clearInterval(intervalId)
-        speedDown = 1000
-        currentBlock = generateBlock(SHAPES)
-        moveDown(currentBlock)
+        console.log('refreshIterationCount = ', refreshIterationCount)
       }
+      refreshIterationCount != 10 ? refreshIterationCount++ : refreshIterationCount = 0
+    } else if (currentBlock['newborn']) {
+      clearInterval(intervalId)
+      gameEnd = true
+      console.log('End of game, "gameEnd" value: ', gameEnd) // here the game ends
     } else {
-      if (checkIfCanRender(currentBlock, rotation)) {
-        futureBlock['newborn'] = false
-        render('clear', currentBlock)
-        currentBlock = deepCopy(futureBlock)
-        render('paint', currentBlock)
-      } else {
-        clearInterval(intervalId)
-        gameEnd = true
-        console.log('End of game, "gameEnd" value: ', gameEnd) // here the game ends
+      clearInterval(intervalId)
+      userInitiatedDrop = false
+      const bricksArray = deepCopy(currentBlock[currentBlock.currentOrientation].bricks)
+      for (brick of bricksArray) {
+        brick[0] += currentBlock.center[0]
+        brick[1] += currentBlock.center[1]
+        occupiedArray[brick[0]][brick[1]] = 2
       }
+      console.log(currentBlock[currentBlock.currentOrientation].bricks)
+      console.log(bricksArray)
+      currentBlock = generateBlock(SHAPES)
+      console.log("new one: ", currentBlock)
+      moveDown(currentBlock)
     }
-  }, speedDown)
+  }, 100)
 }
 
-let speedDown
+// let speedDown
 let userInitiatedDrop
 
 function start() {
@@ -601,9 +602,7 @@ function start() {
   const dropButton = document.getElementById('dropDown')
   dropButton.addEventListener('click', () => {
     if (!intervalId) {
-      speedDown = 100
       userInitiatedDrop = true
-      moveDown(currentBlock)
     }
   })
 
@@ -627,7 +626,7 @@ function start() {
     console.log('Game over!') // end game here if no more new block can be renderred
   }
 
-  speedDown = 1000
+  // let dropDelay = 1000
   userInitiatedDrop = false
   moveDown(currentBlock)
 }
