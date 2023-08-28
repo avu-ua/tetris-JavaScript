@@ -65,82 +65,30 @@ const T_SHAPE = {
   center: [1, 5],
   newborn: true,
   normal: {
-    bricks: [
-      [0, 0],
-      [-1, 0],
-      [0, 1],
-      [0, -1],
-    ],
-    ifRotateLeft: [
-      [-1, -1],
-      [1, -1],
-      [-1, 1],
-    ],
-    ifRotateRight: [
-      [-1, -1],
-      [-1, 1],
-      [1, 1],
-    ],
+    bricks: [[0, 0], [-1, 0], [0, 1], [0, -1]],
+    ifRotateLeft: [[-1, -1], [1, -1], [-1, 1]],
+    ifRotateRight: [[-1, -1], [-1, 1], [1, 1]],
   },
   turnedRight: {
-    bricks: [
-      [0, 0],
-      [-1, 0],
-      [0, 1],
-      [1, 0],
-    ],
-    ifRotateLeft: [
-      [-1, -1],
-      [-1, 1],
-      [1, 1],
-    ],
-    ifRotateRight: [
-      [-1, 1],
-      [1, 1],
-      [1, -1],
-    ],
+    bricks: [[0, 0], [-1, 0], [0, 1], [1, 0]],
+    ifRotateLeft: [[-1, -1], [-1, 1], [1, 1]],
+    ifRotateRight: [[-1, 1], [1, 1], [1, -1]],
   },
   upsideDown: {
-    bricks: [
-      [0, 0],
-      [0, 1],
-      [1, 0],
-      [0, -1],
-    ],
-    ifRotateLeft: [
-      [-1, 1],
-      [1, 1],
-      [1, -1],
-    ],
-    ifRotateRight: [
-      [-1, -1],
-      [1, 1],
-      [1, -1],
-    ],
+    bricks: [[0, 0], [0, 1], [1, 0], [0, -1]],
+    ifRotateLeft: [[-1, 1], [1, 1], [1, -1]],
+    ifRotateRight: [[-1, -1], [1, 1], [1, -1]],
   },
   turnedLeft: {
-    bricks: [
-      [0, 0],
-      [-1, 0],
-      [1, 0],
-      [0, -1],
-    ],
-    ifRotateLeft: [
-      [-1, -1],
-      [1, 1],
-      [1, -1],
-    ],
-    ifRotateRight: [
-      [-1, -1],
-      [-1, 1],
-      [1, -1],
-    ],
+    bricks: [[0, 0], [-1, 0], [1, 0], [0, -1]],
+    ifRotateLeft: [[-1, -1], [1, 1], [1, -1]],
+    ifRotateRight: [[-1, -1], [-1, 1], [1, -1]],
   },
 }
 
 const DOT = {
   currentOrientation: 'normal',
-  center: [1, 5],
+  center: [0, 5],
   newborn: true,
   normal: {
     bricks: [[0, 0]],
@@ -169,42 +117,22 @@ const SQUARE2x2 = {
   center: [0, 4],
   newborn: true,
   normal: {
-    bricks: [
-      [0, 0],
-      [0, 1],
-      [1, 0],
-      [1, 1],
-    ],
+    bricks: [[0, 0], [0, 1], [1, 0], [1, 1]],
     ifRotateLeft: [],
     ifRotateRight: [],
   },
   turnedRight: {
-    bricks: [
-      [0, 0],
-      [0, 1],
-      [1, 0],
-      [1, 1],
-    ],
+    bricks: [[0, 0], [0, 1], [1, 0], [1, 1]],
     ifRotateLeft: [],
     ifRotateRight: [],
   },
   upsideDown: {
-    bricks: [
-      [0, 0],
-      [0, 1],
-      [1, 0],
-      [1, 1],
-    ],
+    bricks: [ [0, 0], [0, 1], [1, 0], [1, 1]],
     ifRotateLeft: [],
     ifRotateRight: [],
   },
   turnedLeft: {
-    bricks: [
-      [0, 0],
-      [0, 1],
-      [1, 0],
-      [1, 1],
-    ],
+    bricks: [[0, 0], [0, 1], [1, 0], [1, 1]],
     ifRotateLeft: [],
     ifRotateRight: [],
   },
@@ -215,62 +143,22 @@ const SQUARE3x3 = {
   center: [1, 4],
   newborn: true,
   normal: {
-    bricks: [
-      [-1, -1],
-      [-1, 0],
-      [-1, 1],
-      [0, -1],
-      [0, 0],
-      [0, 1],
-      [1, -1],
-      [1, 0],
-      [1, 1],
-    ],
+    bricks: [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 0], [0, 1], [1, -1], [1, 0], [1, 1]],
     ifRotateLeft: [],
     ifRotateRight: [],
   },
   turnedRight: {
-    bricks: [
-      [-1, -1],
-      [-1, 0],
-      [-1, 1],
-      [0, -1],
-      [0, 0],
-      [0, 1],
-      [1, -1],
-      [1, 0],
-      [1, 1],
-    ],
+    bricks: [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 0], [0, 1], [1, -1], [1, 0], [1, 1]],
     ifRotateLeft: [],
     ifRotateRight: [],
   },
   upsideDown: {
-    bricks: [
-      [-1, -1],
-      [-1, 0],
-      [-1, 1],
-      [0, -1],
-      [0, 0],
-      [0, 1],
-      [1, -1],
-      [1, 0],
-      [1, 1],
-    ],
+    bricks: [[-1, -1], [-1, 0], [-1, 1] ,[0, -1] ,[0, 0] ,[0, 1], [1, -1], [1, 0], [1, 1]],
     ifRotateLeft: [],
     ifRotateRight: [],
   },
   turnedLeft: {
-    bricks: [
-      [-1, -1],
-      [-1, 0],
-      [-1, 1],
-      [0, -1],
-      [0, 0],
-      [0, 1],
-      [1, -1],
-      [1, 0],
-      [1, 1],
-    ],
+    bricks: [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 0], [0, 1], [1, -1], [1, 0], [1, 1]],
     ifRotateLeft: [],
     ifRotateRight: [],
   },
@@ -281,34 +169,22 @@ const LINE2 = {
   center: [1, 4],
   newborn: true,
   normal: {
-    bricks: [
-      [0, 0],
-      [0, 1],
-    ],
+    bricks: [[0, 0], [0, 1]],
     ifRotateLeft: [[-1, 1]],
     ifRotateRight: [[1, 1]],
   },
   turnedRight: {
-    bricks: [
-      [0, 0],
-      [1, 0],
-    ],
+    bricks: [[0, 0], [1, 0]],
     ifRotateLeft: [[1, 1]],
     ifRotateRight: [],
   },
   upsideDown: {
-    bricks: [
-      [0, 0],
-      [0, 1],
-    ],
+    bricks: [[0, 0], [0, 1]],
     ifRotateLeft: [[-1, 1]],
     ifRotateRight: [[1, 1]],
   },
   turnedLeft: {
-    bricks: [
-      [0, 0],
-      [1, 0],
-    ],
+    bricks: [[0, 0], [1, 0]],
     ifRotateLeft: [[1, 1]],
     ifRotateRight: [],
   },
@@ -319,64 +195,24 @@ const LINE3 = {
   center: [0, 4],
   newborn: true,
   normal: {
-    bricks: [
-      [0, -1],
-      [0, 0],
-      [0, 1],
-    ],
-    ifRotateLeft: [
-      [-1, 1],
-      [1, -1],
-    ],
-    ifRotateRight: [
-      [-1, -1],
-      [1, 1],
-    ],
+    bricks: [[0, -1], [0, 0], [0, 1]],
+    ifRotateLeft: [[-1, 1], [1, -1]],
+    ifRotateRight: [[-1, -1], [1, 1]],
   },
   turnedRight: {
-    bricks: [
-      [-1, 0],
-      [0, 0],
-      [1, 0],
-    ],
-    ifRotateLeft: [
-      [-1, -1],
-      [1, 1],
-    ],
-    ifRotateRight: [
-      [-1, 1],
-      [1, -1],
-    ],
+    bricks: [[-1, 0], [0, 0], [1, 0]],
+    ifRotateLeft: [[-1, -1], [1, 1]],
+    ifRotateRight: [[-1, 1], [1, -1]],
   },
   upsideDown: {
-    bricks: [
-      [0, -1],
-      [0, 0],
-      [0, 1],
-    ],
-    ifRotateLeft: [
-      [-1, 1],
-      [1, -1],
-    ],
-    ifRotateRight: [
-      [-1, -1],
-      [1, 1],
-    ],
+    bricks: [[0, -1], [0, 0], [0, 1]],
+    ifRotateLeft: [[-1, 1], [1, -1]],
+    ifRotateRight: [[-1, -1], [1, 1]],
   },
   turnedLeft: {
-    bricks: [
-      [-1, 0],
-      [0, 0],
-      [1, 0],
-    ],
-    ifRotateLeft: [
-      [-1, -1],
-      [1, 1],
-    ],
-    ifRotateRight: [
-      [-1, 1],
-      [1, -1],
-    ],
+    bricks: [[-1, 0], [0, 0], [1, 0]],
+    ifRotateLeft: [[-1, -1], [1, 1]],
+    ifRotateRight: [[-1, 1], [1, -1]],
   },
 }
 
@@ -385,38 +221,22 @@ const SMALL_G_RIGHT = {
   center: [0, 5],
   newborn: true,
   normal: {
-    bricks: [
-      [0, 1],
-      [1, 0],
-      [1, 1],
-    ],
+    bricks: [[0, 1], [1, 0], [1, 1]],
     ifRotateLeft: [[0, 0]],
     ifRotateRight: [[0, 0]],
   },
   turnedRight: {
-    bricks: [
-      [0, 0],
-      [1, 0],
-      [1, 1],
-    ],
+    bricks: [[0, 0], [1, 0], [1, 1]],
     ifRotateLeft: [[-1, 1]],
     ifRotateRight: [[-1, 1]],
   },
   upsideDown: {
-    bricks: [
-      [0, 0],
-      [0, 1],
-      [1, 0],
-    ],
+    bricks: [[0, 0], [0, 1], [1, 0]],
     ifRotateLeft: [[1, 1]],
     ifRotateRight: [[1, 1]],
   },
   turnedLeft: {
-    bricks: [
-      [0, 0],
-      [0, 1],
-      [1, 1],
-    ],
+    bricks: [[0, 0], [0, 1], [1, 1]],
     ifRotateLeft: [[1, -1]],
     ifRotateRight: [[1, -1]],
   },
@@ -468,10 +288,6 @@ function checkIfCanRender(plannedBlock, rotation) {
     for (let j = 0; j < potentialObstales.length; j++) {
       let row = plannedBlock['center'][0] + potentialObstales[j][0]
       let col = plannedBlock['center'][1] + potentialObstales[j][1]
-      console.log('row: ', row)
-      console.log('col: ', col)
-      console.log(occupiedArray)
-      console.log(occupiedArray[row][col])
       if (occupiedArray[row][col] === 2) {
         return false
       }
@@ -494,9 +310,7 @@ function render(paintOrClear, block) {
   let bricks = block[blockOrientation]['bricks']
   for (let i = 0; i < bricks.length; i++) {
     let brickPosition = [center[0] + bricks[i][0], center[1] + bricks[i][1]]
-    document.getElementById(
-      getID(brickPosition[0], brickPosition[1])
-    ).style.backgroundColor = paintColor
+    document.getElementById(getID(brickPosition[0], brickPosition[1])).style.backgroundColor = paintColor
     occupiedArray[brickPosition[0]][brickPosition[1]] = occupationIndex
     document.getElementById(
       getID(brickPosition[0], brickPosition[1])
@@ -527,7 +341,6 @@ function rotate(rotation) {
       !ORIENTATION.indexOf(currentBlock['currentOrientation'])
     ) {
       newBlock['currentOrientation'] = ORIENTATION[3]
-      console.log(newBlock['currentOrientation'])
     } else if (rotation === -1) {
       newBlock['currentOrientation'] =
         ORIENTATION[ORIENTATION.indexOf(currentBlock['currentOrientation']) - 1]
@@ -539,7 +352,6 @@ function rotate(rotation) {
     } else {
       newBlock['currentOrientation'] =
         ORIENTATION[ORIENTATION.indexOf(currentBlock['currentOrientation']) + 1]
-      console.log(newBlock['currentOrientation'])
     }
     if (checkIfCanRender(newBlock, rotation)) {
       render('clear', currentBlock)
@@ -556,13 +368,20 @@ function moveDown(currentBlock) {
   const intervalId = setInterval(() => {
     futureBlock = deepCopy(currentBlock)
     if (!currentBlock['newborn']) futureBlock['center'][0]++
+    if (userMovedHorizontally) {
+      futureBlock['center'][1] = Math.max(1, futureBlock['center'][1] - 1)
+    }
+    console.log('senter is now: ', futureBlock['center'][1])
     if (checkIfCanRender(futureBlock, rotation)) {
-      currentBlock['newborn'] = false
-      if (userInitiatedDrop || refreshIterationCount === 10) {
+      if (currentBlock['newborn']) {
+        render('paint', currentBlock)
+        currentBlock['newborn'] = false
+      }
+      if (userInitiatedDrop || refreshIterationCount === 10 || userMovedHorizontally) {
         render('clear', currentBlock)
         currentBlock = deepCopy(futureBlock)
         render('paint', currentBlock)
-        console.log('refreshIterationCount = ', refreshIterationCount)
+        userMovedHorizontally = 0
       }
       refreshIterationCount != 10 ? refreshIterationCount++ : refreshIterationCount = 0
     } else if (currentBlock['newborn']) {
@@ -579,7 +398,6 @@ function moveDown(currentBlock) {
         occupiedArray[brick[0]][brick[1]] = 2
       }
       console.log(currentBlock[currentBlock.currentOrientation].bricks)
-      console.log(bricksArray)
       currentBlock = generateBlock(SHAPES)
       console.log("new one: ", currentBlock)
       moveDown(currentBlock)
@@ -589,6 +407,7 @@ function moveDown(currentBlock) {
 
 // let speedDown
 let userInitiatedDrop
+let userMovedHorizontally = 0
 
 function start() {
   temporaryShowInner()
@@ -608,15 +427,20 @@ function start() {
 
   const leftButton = document.getElementById('moveLeft')
   leftButton.addEventListener('click', () => {
-    if (!intervalId) {
-      move(-1, 0)
-    }
+    // currentBlock['center'][0]--
+    // moveDown(currentBlock)
+    userMovedHorizontally = -1
+    // console.log('userMovedHorizontally = ', userMovedHorizontally)
+    // if (!intervalId) {
+    //   move(-1, 0)
+    // }
   })
 
   const rightButton = document.getElementById('moveRight')
   rightButton.addEventListener('click', () => {
     if (!intervalId) {
       move(1, 0)
+      // userMovedHorizontally = 1
     }
   })
 
@@ -628,5 +452,6 @@ function start() {
 
   // let dropDelay = 1000
   userInitiatedDrop = false
+  render('paint', currentBlock)
   moveDown(currentBlock)
 }
